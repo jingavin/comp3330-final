@@ -2,14 +2,13 @@ import Image from "next/image";
 import MyHero from "@/components/ui/MyHeroSection";
 import CalendarWidget from "@/components/github-calendar";
 
-const HERO_PLACEHOLDER_AVATAR = "https://placehold.co/200x200?text=Avatar";
+const HERO_PLACEHOLDER_AVATAR = "/me.png";
 
 const defaultHeroContent = {
   avatar: HERO_PLACEHOLDER_AVATAR,
-  fullName: "Your Name",
-  shortDescription: "Full-stack developer & designer",
-  longDescription:
-    "Welcome to my portfolio. I build beautiful, functional web applications.",
+  fullName: "Gavin",
+  shortDescription: "Full-stack developer",
+  longDescription: "Welcome to my portfolio",
 };
 
 export default async function Home() {

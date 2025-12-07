@@ -328,7 +328,7 @@ async function seedHeroTable() {
       ${"https://picsum.photos/300"},
       ${"Gavin jin"},
       ${"Full-Stack Web Developer"},
-      ${"This is my portfolio that has super amazing projects and work experience please hire me thank you! ◡̈"}
+      ${"this is show mty work and stuff"}
     )
   `;
 }

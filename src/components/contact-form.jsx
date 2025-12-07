@@ -5,14 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -21,10 +14,7 @@ import { toast } from "sonner";
 const messageSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
   email: z.string().email("Please enter a valid email address"),
-  message: z
-    .string()
-    .min(10, "Please enter at least 10 characters")
-    .max(2000, "Message is too long"),
+  message: z.string().min(10, "Please enter at least 10 characters").max(2000, "Message is too long"),
 });
 
 export default function ContactForm() {
@@ -88,11 +78,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Email *</FormLabel>
               <FormControl>
-                <Input
-                  type="email"
-                  placeholder="you@example.com"
-                  {...field}
-                />
+                <Input type="email" placeholder="you@example.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -106,11 +92,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Message *</FormLabel>
               <FormControl>
-                <Textarea
-                  placeholder="Tell me about your project, the problem you're solving, or how I can help..."
-                  rows={6}
-                  {...field}
-                />
+                <Textarea placeholder="send me a message" rows={6} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
