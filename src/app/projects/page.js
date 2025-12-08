@@ -1,9 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { createSlug } from "@/lib/utils";
 import ProjectPreviewCard from "@/components/ui/project-preview-card";
 import { useUser } from "@auth0/nextjs-auth0";
