@@ -3,19 +3,22 @@
 import React, { useEffect, useState } from "react";
 import { Progress } from "@/components/ui/progress";
 
-export function SkillIndicator({ title, value, color = "bg-black" }) {
-  const [progress, setProgress] = useState(0);
+export function SkillIndicatorBar({ label, level, color = "bg-primary" }) {
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => setProgress(value), 300);
+    const timer = setTimeout(() => setValue(level), 150);
     return () => clearTimeout(timer);
-  }, [value]);
+  }, [level]);
 
   return (
-    <div className="flex flex-col gap-2 w-full">
-      {title && <h3 className="text-sm font-medium text-gray-700">{title}</h3>}
+    <div className="space-y-1">
+      <div className="flex items-center justify-between text-xs text-muted-foreground">
+        <span className="font-medium text-foreground">{label}</span>
+        <span>{level}%</span>
+      </div>
 
-      <Progress value={progress} className="w-full" indicatorClassName={color} />
+      <Progress value={value} indicatorClassName={color} className="h-2" />
     </div>
   );
 }
